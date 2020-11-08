@@ -54,6 +54,7 @@ class Fila:
             return "A fila está vazia!"
 
 
+# Testes
 A = Fila()
 A.inserir("A")
 A.inserir("B")

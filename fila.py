@@ -27,7 +27,7 @@ class Fila:
             self.tamanho -= 1
             return elem
         else:
-            print("A fila está vazia!")
+            return "A fila está vazia!"
 
     def consulta(self):
         """retorna o inicio sem remover"""
@@ -35,7 +35,7 @@ class Fila:
             elem = self.inicio.dado
             return elem
         else:
-            print("A fila está vazia!")
+            return "A fila está vazia!"
 
     def tamanho(self):
         """Retorna o tamanho da lista"""
@@ -63,6 +63,7 @@ A.inserir("D")
 A.inserir("E")
 print(A.mostrar_fila())
 print(A.consulta())
-A.remover()
+
+print(A.remover())
 print(A.mostrar_fila())
 print(A.consulta())

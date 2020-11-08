@@ -19,13 +19,16 @@ class Pilha:
             node = self.topo
             self.topo = self.topo.pos_seguinte
             self.tamanho -= 1
-            return node
+            return node.dado
         else:
-            return "A lista está vazia"
+            return "A pilha está vazia"
 
     def consulta(self):
         """retorna o inicio sem remover"""
-        pass
+        if self.tamanho > 0:
+            return self.topo.dado
+        else:
+            return "A pilha está vazia"
 
     def tamanho(self):
         """Retorna o tamanho da lista"""
@@ -33,7 +36,24 @@ class Pilha:
 
     def mostrar_pilha(self):
         """mostra todos itens na pilha"""
-        pass
+        r = ""
+        pointer = self.topo
+        while(pointer):
+            r = r + str(pointer.dado) + "\n"
+            pointer = pointer.pos_seguinte
+        return r
 
 
 # Testes
+A = Pilha()
+A.inserir("A")
+A.inserir("B")
+A.inserir("C")
+A.inserir("D")
+A.inserir("E")
+print(A.mostrar_pilha())
+print(A.consulta())
+
+print(A.remover())
+print(A.mostrar_pilha())
+print(A.consulta())

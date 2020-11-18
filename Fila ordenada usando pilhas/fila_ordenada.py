@@ -51,30 +51,32 @@ class Fila:
                 self.excluir()
             else:
                 while self.inicio.dado > stack.consultar():
-                    stack2.inserir(stack.topo.dado)
+                    stack2.inserir(stack.consultar())
                     stack.remover()
                     if stack.consultar() is None:
                         break
                 stack.inserir(self.inicio.dado)
                 self.excluir()
                 while stack2.consultar() is not None:
-                    stack.inserir(stack2.topo.dado)
+                    stack.inserir(stack2.consultar())
                     stack2.remover()
         while stack.consultar() is not None:
-            self.inserir(stack.topo.dado)
+            self.inserir(stack.consultar())
             stack.remover()
         return self.mostrar_fila()
 
 
 # testes
 queue = Fila()
-queue.inserir(1.7)
-queue.inserir(4.4)
-queue.inserir(3.2)
-queue.inserir(6.1)
-queue.inserir(3.1)
-queue.inserir(5.8)
+queue.inserir(6)
+queue.inserir(1)
+queue.inserir(4)
+queue.inserir(3)
+queue.inserir(6.3)
+queue.inserir(3)
+queue.inserir(5)
 queue.inserir(2)
+queue.inserir(6)
 
 print(">> Fila inicial <<")
 print(queue.mostrar_fila())

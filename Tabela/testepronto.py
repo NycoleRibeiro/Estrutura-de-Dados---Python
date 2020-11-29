@@ -1,6 +1,3 @@
-# 1- todas as operações básicas do TAD Tabela por contiguidade física;
-# 2- uma nova operação de inserção ordenada e o algoritmo de busca binária;
-# 3- um programa que importe a classe e teste todos os métodos.
 from Tabela import tabela
 
 tam = int(input("Tamanho: "))

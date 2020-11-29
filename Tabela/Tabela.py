@@ -105,6 +105,6 @@ class tabela:
             tab = ""
             for i in range(0, self.tamanho):
                 tab += f"{self.chaves[i]} {self.valores[i]}\n"
-                return tab
+            return tab
         else:
-            print(" ")
+            return None

@@ -83,8 +83,9 @@ class tabela:
     def consulta_valor(self, chave):
         """Retorna os valores da chave"""
         if self.tamanho > 0:
-            index = self.consulta_index(chave)
-            return self.valores[index]
+            if chave in self.chaves:
+                index = self.consulta_index(chave)
+                return self.valores[index]
         return None
 
     def consulta_index(self, chave):
@@ -101,7 +102,9 @@ class tabela:
 
     def mostrar_tabela(self):
         if self.tamanho > 0:
+            tab = ""
             for i in range(0, self.tamanho):
-                print(f"{self.chaves[i]} {self.valores[i]}")
+                tab += f"{self.chaves[i]} {self.valores[i]}\n"
+                return tab
         else:
             print(" ")

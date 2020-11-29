@@ -21,9 +21,11 @@ while True:
 
     if opc == 3:
         break
+
+    # Tabela Linear
     elif opc == 2:
         for i in range(num_itens):
-            print("Digite a chave (Deve ser um número inteiro")
+            print("Digite a chave (Deve ser um número inteiro)")
             while True:
                 try:
                     chave = int(input("> "))
@@ -41,8 +43,66 @@ while True:
             print("[ 1 ] Inserir item")
             print("[ 2 ] Remover item")
             print("[ 3 ] Consultar valor")
-            print("[ 4 ] Consultar linha")
+            print("[ 4 ] Consultar número da linha")
             print("[ 5 ] Mostrar tabela")
             print("[ 6 ] Destruir tabela")
             print("[ 7 ] Sair")
             opc = int(input("> "))
+            limpa()
+
+            if opc == 7:
+                break
+
+            elif opc == 1:
+                print("Digite a chave (Deve ser um número inteiro)")
+                while True:
+                    try:
+                        chave = int(input("> "))
+                        break
+
+                print("\n\nDigite o(s) valor(es) correspondente(s) a chave:")
+                print("(caso seja mais de um valor, separar por espaço")
+                valor = input().split()
+
+                pessoas.inserir_linear(chave, valor)
+                limpa()
+
+            elif opc == 2:
+                print("Digite a chave:")
+                while True:
+                    try:
+                        chave = int(input("> "))
+                        break
+                pessoas.remover(chave)
+
+            elif opc == 3:
+                print("Digite a chave:")
+                while True:
+                    try:
+                        chave = int(input("> "))
+                        break
+                value = pessoas.consulta_valor(chave)
+                if value is None:
+                    value = "INEXISTENTE"
+                print(f"{chave} {value}\n\n")
+
+            elif opc == 4:
+                print("Digite a chave:")
+                while True:
+                    try:
+                        chave = int(input("> "))
+                        break
+                value = pessoas.consulta_index(chave)
+                if value is None:
+                    value = "INEXISTENTE"
+                else:
+                    value += 1
+                print(f"{chave} está na linha {value}\n\n")
+
+            elif opc == 5:
+                print(f"{pessoas.mostrar_tabela()}\n\n")
+
+            elif opc == 6:
+                pessoas.destruir()
+
+        break

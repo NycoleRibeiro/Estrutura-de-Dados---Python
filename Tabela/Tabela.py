@@ -108,3 +108,9 @@ class tabela:
             return tab
         else:
             return None
+
+    def cheia(self):
+        if self.tamanho == self.fim:
+            return True
+        else:
+            return False

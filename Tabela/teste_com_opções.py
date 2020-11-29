@@ -52,15 +52,18 @@ while True:
                 break
 
             elif opc == 1:
-                print("Digite a chave (Deve ser um número inteiro)")
-                chave = int(input("> "))
+                if not pessoas.cheia():
+                    print("Digite a chave (Deve ser um número inteiro)")
+                    chave = int(input("> "))
 
-                print("\n\nDigite o(s) valor(es) correspondente(s) a chave:")
-                print("(caso seja mais de um valor, separar por espaço")
-                valor = input().split()
+                    print("\n\nDigite o(s) valor(es) correspondente(s) a chave:")
+                    print("(caso seja mais de um valor, separar por espaço")
+                    valor = input().split()
 
-                pessoas.inserir_linear(chave, valor)
-                limpa()
+                    pessoas.inserir_linear(chave, valor)
+                    limpa()
+                else:
+                    print("Tabela está cheia")
 
             elif opc == 2:
                 print("Digite a chave:")

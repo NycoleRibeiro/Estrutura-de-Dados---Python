@@ -98,7 +98,20 @@ class tabela:
         return None
 
     def consulta_index_binaria(self, chave):
-        pass
+        if self.tamanho > 0:
+            if chave in self.chaves:
+                inicio = 0
+                fim = self.tamanho - 1
+                while inicio <= fim:
+                    meio = (inicio + fim) // 2
+                    if self.chaves[meio] == chave:
+                        return meio
+                    else:
+                        if self.chaves[meio] < chave:
+                            inicio = meio + 1
+                        else:
+                            fim = meio
+        return None
 
     def mostrar_tabela(self):
         if self.tamanho > 0:
@@ -111,6 +124,12 @@ class tabela:
 
     def cheia(self):
         if self.tamanho == self.fim:
+            return True
+        else:
+            return False
+
+    def vazia(self):
+        if self.tamanho == 0:
             return True
         else:
             return False

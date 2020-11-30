@@ -34,7 +34,6 @@ while True:
 
             pessoas.inserir_linear(chave, valor)
             limpa()
-            print(valor)
 
         while True:
             print("Digite o número correspondente ao desejado:")
@@ -70,6 +69,7 @@ while True:
                 chave = int(input("> "))
 
                 pessoas.remover(chave)
+                limpa()
 
             elif opc == 3:
                 print("Digite a chave:")
@@ -92,11 +92,10 @@ while True:
                 print(f"{chave} está na linha {value}\n\n")
 
             elif opc == 5:
-                show = f"{pessoas.mostrar_tabela()}\n\n"
-                if show is None:
+                if pessoas.vazia():
                     print(" ")
                 else:
-                    print(show)
+                    print(f"{pessoas.mostrar_tabela()}\n\n")
 
             elif opc == 6:
                 pessoas.destruir()
@@ -115,7 +114,6 @@ while True:
 
             pessoas.inserir_ordenada(chave, valor)
             limpa()
-            print(valor)
 
         while True:
             print("Digite o número correspondente ao desejado:")
@@ -146,8 +144,8 @@ while True:
             elif opc == 2:
                 print("Digite a chave:")
                 chave = int(input("> "))
-
                 pessoas.remover(chave)
+                limpa()
 
             elif opc == 3:
                 print("Digite a chave:")
@@ -170,11 +168,10 @@ while True:
                 print(f"{chave} está na linha {value}\n\n")
 
             elif opc == 5:
-                show = f"{pessoas.mostrar_tabela()}\n\n"
-                if show is None:
+                if pessoas.vazia():
                     print(" ")
                 else:
-                    print(show)
+                    print(f"{pessoas.mostrar_tabela()}\n\n")
 
             elif opc == 6:
                 pessoas.destruir()

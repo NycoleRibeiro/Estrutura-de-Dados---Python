@@ -42,13 +42,13 @@ class tabela:
                     for i in range(self.tamanho-1, -1, -1):
                         key = self.chaves[i]
                         # Se a chave da linha for menor que a chave a ser
-                        # acrescentada, a proxima linha recebe a chave e o valor
+                        # acrescentada, a próxima linha recebe a chave e o valor
                         if key < chave:
                             self.chaves[i+1] = chave
                             self.valores[i+1] = valor
                             self.tamanho += 1
                             return
-                        # senão a proxima linha recebe a linha anterior
+                        # senão a próxima linha recebe a linha anterior
                         self.chaves[i+1] = self.chaves[i]
                         self.valores[i+1] = self.valores[i]
                     # Se depois da checagem a chave não foi maior que nenhuma
@@ -110,7 +110,7 @@ class tabela:
                         if self.chaves[meio] < chave:
                             inicio = meio + 1
                         else:
-                            fim = meio
+                            fim = meio -1
         return None
 
     def mostrar_tabela(self):
